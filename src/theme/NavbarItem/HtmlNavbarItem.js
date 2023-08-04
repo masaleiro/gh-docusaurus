@@ -10,7 +10,7 @@ export default function HtmlNavbarItem({
   isDropdownItem = false,
 }) {
  //const authData = useContext(AuthContext);
- const { user, login, logout } = useContext(AuthContext);
+ const { user, login, logout, authReady } = useContext(AuthContext);
  console.log(JSON.stringify(user));  
  //console.log(config.themeConfig.navbar.items);
 
@@ -18,9 +18,13 @@ export default function HtmlNavbarItem({
 
  return (
    <div style={{display:"flex", alignItems: "inherit"}}>
-     {user && <label>{userGreeting}</label>}
+    { authReady && (
+      <>
+      {user && <label>{userGreeting}</label>}
      {!user && <button type="button" className="clean-btn button button--primary margin-left--md" onClick={login}> Login/SignUp</button>}
-     {user && <button type="button" className="clean-btn button button--primary margin-left--md" onClick={logout}> Log out</button>}
+      {user && <button type="button" className="clean-btn button button--primary margin-left--md" onClick={logout}> Log out</button>}
+      </>
+    )}
    </div>
  );
 };
