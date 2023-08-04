@@ -11,16 +11,16 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://demosaurus.netlify.app/',
+  url: 'https://masaleiro.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/gh-docusaurus/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  // organizationName: 'masaleiro', // Usually your GitHub org/user name.
-  // projectName: 'gh-docusaurus', // Usually your repo name.
-  // deploymentBranch: "gh-pages",
+   organizationName: 'masaleiro', // Usually your GitHub org/user name.
+   projectName: 'gh-docusaurus', // Usually your repo name.
+   deploymentBranch: "gh-pages",
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
