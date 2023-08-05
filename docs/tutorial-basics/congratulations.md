@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+tags: [hola, docusaurus]
 ---
 
 # Congratulations Dino!

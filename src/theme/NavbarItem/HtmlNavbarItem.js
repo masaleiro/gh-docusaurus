@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import AuthContext from '../AuthContext'; // Adjust the path according to your project structure
-import clsx from 'clsx';
 
 
 export default function HtmlNavbarItem({
@@ -9,11 +8,8 @@ export default function HtmlNavbarItem({
   mobile = false,
   isDropdownItem = false,
 }) {
- //const authData = useContext(AuthContext);
- const { user, login, logout, authReady } = useContext(AuthContext);
- console.log(JSON.stringify(user));  
- //console.log(config.themeConfig.navbar.items);
-
+ const { user, login, logout, authReady} = useContext(AuthContext);
+ 
  const userGreeting = user ? `Welcome, ${user.user_metadata.full_name}!` : 'Welcome, guest!';
 
  return (

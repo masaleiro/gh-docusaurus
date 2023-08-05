@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+tags: [hola, docusaurus, mat9]
 ---
 
 # Tutorial Intro

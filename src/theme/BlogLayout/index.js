@@ -6,14 +6,28 @@ import BlogSidebar from '@theme/BlogSidebar';
 export default function BlogLayout(props) {
   const {sidebar, toc, children, ...layoutProps} = props;
   const hasSidebar = sidebar && sidebar.items.length > 0;
-  const { user, login, logout, authReady } = useContext(AuthContext);
-  console.log(JSON.stringify(user));  
+  const { user, authReady } = useContext(AuthContext);
+  let roles = null
+  let allowed = true;
+  if(authReady){
+    if(user){
+      // roles = user.app_metadata.roles;
+      // if(roles.includes("admin")){
+        allowed = true;
+      // }else{
+      //   if(metadata.tags){
+      //     allowed = metadata.tags.some(tag => roles.includes(tag.label));
+      //   }
+      // }
+    }
+  } 
   return (
     <>
       <Layout {...layoutProps}>
         <div className="container margin-vert--lg">
           <div className="row">
-            {user ? (
+            {/* {user && role == 'admin' ? ( */}
+            {allowed ? (
               <>
                 <BlogSidebar sidebar={sidebar} />
                 <main
